@@ -1,0 +1,28 @@
+<div class="container">
+  <h2><strong>Category List</strong> </h2>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <td>Category Id</td>
+        <td>Category Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cats">
+        <!-- <td>{{c.CatId}}</td> -->
+        <button (click)="Open(c)">{{c.CatId}}</button>
+        <!-- <button (click)="Open(c)">{c.CatName}</button> -->
+        <td>{{c.CatName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button (click)="Open('Add')">Add</button>
+<button (click)="Open('Edit')">Edit</button>
+<button (click)="Open('Upload')">Upload</button>
+<button (click)="child1.open()">Upload</button>
+
+<app-child1 #child1></app-child1>
+<app-child2 #child2></app-child2>

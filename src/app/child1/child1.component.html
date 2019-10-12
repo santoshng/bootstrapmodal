@@ -1,0 +1,44 @@
+<p>
+  child1 works!
+</p>
+<ng-template #child1content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of birth</label>
+        <div>{{category}}</div>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+            #dp="ngbDatepicker" />
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="custom-file">
+        <input type="file" class="custom-file-input" formControlName="importFile" id="importFile"
+          (change)="onFileChange($event.target.files)" />
+        <label class="custom-file-label" #labelImport for="importFile"><i class="fas fa-search"></i> Choose file</label>
+      </div> -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+  Launch demo modal
+</button> -->
+
+<hr />
+
+<pre>{{ closeResult }}</pre>
